@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success</title>
+</head>
+<body>
+	<h1>Success</h1>
+	<p>You have successfully logged in.</p>
+	<form method="POST" action="/prediction">
+		{% if dataset == "classification" %}
+		<label>Feature 1:</label>
+		<input type="text" name="feature1"><br><br>
+		<label>Feature 2:</label>
+		<input type="text" name="feature2"><br><br>
+		{% elif dataset == "regression" %}
+		<label>Feature 1:</label>
+		<input type="text" name="feature1"><br><br>
+		<label>Feature 2:</label>
+		<input type="text" name="feature2"><br><br>
+		{% elif dataset == "recommendation" %}
+		<label>User ID:</label>
+		<input type="text" name="user_id"><br><br>
+		<label>Item ID:</label>
+		<input type="text" name="item_id"><br><br>
+		{% endif %}
+		<input type="submit" value="Predict">
+	</form>
+</body>
+</html>
